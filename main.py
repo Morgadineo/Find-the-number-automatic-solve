@@ -1,5 +1,14 @@
 from random import randint
 
+
+def descobrir_numero_tentativas(valor):
+    qtde = 0
+    while valor != 0:
+        valor = valor // 2
+        qtde += 1
+    return qtde
+
+
 numero_maximo = int(input("Valor máximo possível (inteiro): "))
 numero_min = 0
 
@@ -27,5 +36,5 @@ while True:
         chute = (chute_maximo + chute_minimo) // 2
 
     elif chute == numero_aleatorio:
-        print(f"Parabéns. O numero era {numero_aleatorio} - tentativas {tentativa}")
+        print(f"Parabéns. O numero era {numero_aleatorio} - levou {tentativa} tentativas e o máximo de tentativas era {descobrir_numero_tentativas(numero_maximo)}")
         break
